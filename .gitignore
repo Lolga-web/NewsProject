@@ -1,0 +1,9 @@
+node_modules/
+vendor/
+.editorconfig
+.env
+.env.dusk
+.env.example
+phpunit.dusk.xml
+.styleci.yml
+
