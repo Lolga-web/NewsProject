@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="one_news_container">
-        <div class="one_news_main_section">
+        <div class="main_section">
 
             <div class="one_news">
                 @if ($news)
@@ -111,7 +111,7 @@
             </div>
         </div>
 
-        <div class="one_news_right_section">
+        <div class="right_section">
             @if ($newNews)
                 <div class="currency_exchange_rate">
                     <p>Курс ЦБ</p> 

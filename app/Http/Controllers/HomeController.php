@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Swap\Laravel\Facades;
-use Swap\Laravel\Facades\Swap;
+use App\Models\News;
+use App\Services\CurrencyExchangeRate as Rate;
 
 class HomeController extends Controller
 {
@@ -23,10 +24,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(News $news, Rate $rate)
     {
-    //     $rate = Swap::latest('USD/RUB');
-    //     dd(number_format($rate->getValue(), 2));
-        return view('index');
+        $newNews = News::orderByDesc('date')
+                        ->take(10)
+                        ->get();
+
+        $popularNews = News::inRandomOrder()
+                        ->take(10)
+                        ->get();
+                        
+        $rate = $rate->currencyExchangeRate(['USD/RUB', 'EUR/RUB']);
+
+        return view('index')
+                    ->with('newNews', $newNews)
+                    ->with('rate', $rate)
+                    ->with('popularNews', $popularNews);
     }
 }

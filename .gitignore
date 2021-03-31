@@ -6,4 +6,5 @@ vendor/
 .env.example
 phpunit.dusk.xml
 .styleci.yml
+phpunit.xml
 

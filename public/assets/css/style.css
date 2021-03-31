@@ -83,8 +83,15 @@ main{
 .one_news{
     margin-bottom: 40px;
 }
-.one_news_main_section{
+.main_section{
     flex: 0 1 auto;
+}
+.right_section{
+    flex: 0 0 300px;
+    max-width: 300px;
+    /* margin-left: 20px; */
+    margin: 0 0 0 auto;
+    padding-left: 20px;
 }
 .one_news_img{
     width: 100%;
@@ -145,10 +152,7 @@ main{
     text-decoration: none;
 }
 
-.one_news_right_section{
-    flex: 0 0 300px;
-    margin-left: 20px;
-}
+
 .currency_exchange_rate{
     padding: 10px 0;
     display: flex;
