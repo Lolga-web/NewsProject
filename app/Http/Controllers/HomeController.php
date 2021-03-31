@@ -26,11 +26,15 @@ class HomeController extends Controller
      */
     public function index(News $news, Rate $rate)
     {
-        $newNews = News::orderByDesc('date')
+        $newNews = $news->orderByDesc('date')
                         ->take(10)
                         ->get();
 
-        $popularNews = News::inRandomOrder()
+        $popularNews = $news->inRandomOrder()
+                        ->take(20)
+                        ->get();
+
+        $mainNews = $news->inRandomOrder()
                         ->take(10)
                         ->get();
                         
@@ -39,6 +43,7 @@ class HomeController extends Controller
         return view('index')
                     ->with('newNews', $newNews)
                     ->with('rate', $rate)
-                    ->with('popularNews', $popularNews);
+                    ->with('popularNews', $popularNews)
+                    ->with('mainNews', $mainNews);
     }
 }
