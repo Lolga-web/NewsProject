@@ -25,9 +25,6 @@ main{
     margin-bottom: 30px;
 }
 
-.main_page_container{
-    
-}
 .main_top{
     display: flex;
 }
@@ -123,8 +120,10 @@ main{
 .news_list{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .news_item{
+    width: 350px;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
