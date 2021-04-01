@@ -31,7 +31,7 @@ class HomeController extends Controller
                         ->get();
 
         $popularNews = $news->inRandomOrder()
-                        ->take(20)
+                        ->take(21)
                         ->get();
 
         $mainNews = $news->inRandomOrder()
