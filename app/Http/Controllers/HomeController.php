@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Swap\Laravel\Facades;
 use App\Models\News;
+use App\Models\Category;
 use App\Services\CurrencyExchangeRate as Rate;
 
 class HomeController extends Controller
@@ -38,12 +39,17 @@ class HomeController extends Controller
                         ->take(10)
                         ->get();
                         
+        $allNewsByCategories = Category::with(['news' => function ($query) {
+            $query->orderByDesc('date');
+        }])->orderBy('title')->get();
+
         $rate = $rate->currencyExchangeRate(['USD/RUB', 'EUR/RUB']);
 
         return view('index')
                     ->with('newNews', $newNews)
                     ->with('rate', $rate)
                     ->with('popularNews', $popularNews)
-                    ->with('mainNews', $mainNews);
+                    ->with('mainNews', $mainNews)
+                    ->with('allNewsByCategories', $allNewsByCategories);
     }
 }

@@ -26,6 +26,9 @@ main{
 }
 
 .main_page_container{
+    
+}
+.main_top{
     display: flex;
 }
 
@@ -53,6 +56,12 @@ main{
     font-weight: 700;
     font-family: PT Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 1;
+}
+.one_main_news_title_link:hover{
+    text-decoration: none;
+}
+.one_main_news_title_link:hover .one_main_news_title{
+    color: #c33;
 }
 
 
