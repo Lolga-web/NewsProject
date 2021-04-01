@@ -3,7 +3,7 @@
 @section('title', 'Категории')
 
 @section('content')
-    <h1 class="main_title">Категории новостей</h1>
+    <h1 class="main_title">Категории</h1>
 
     <div class="categories_list_container">
         <div class="categories_list">

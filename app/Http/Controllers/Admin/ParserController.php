@@ -5,11 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Jobs\NewsParsing;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Orchestra\Parser\Xml\Facade as XmlParser;
-use KubAT\PhpSimple\HtmlDomParser;
-use App\Models\Category;
-use App\Models\News;
 use App\Models\Resource;
 
 class ParserController extends Controller
@@ -26,7 +21,7 @@ class ParserController extends Controller
         $end = microtime(true);
 
         return redirect()->route('admin.resources.index')
-                        ->with('success', 'Загрузка завершена! Время: ' . $end - $start);
+                        ->with('success', 'Загрузка завершена!');
 
     }
 }

@@ -33,10 +33,12 @@ class ResourceController extends Controller
 
         $arr = $request->all();
         if(Resource::where('title', $arr['title'])->orWhere('url', $arr['url'])->first()){
-            return redirect()->route('admin.resources.index')->with('error', "Ресурс ".$arr['title']." уже существует.");
+            return redirect()->route('admin.resources.index')
+                             ->with('error', "Ресурс ".$arr['title']." уже существует.");
         }        
         $resourсe->fill($arr)->save();
-        return redirect()->route('admin.resources.index')->with('success', "Ресурс добавлен!");
+        return redirect()->route('admin.resources.index')
+                         ->with('success', "Ресурс добавлен!");
     }
 
     /**
@@ -49,6 +51,7 @@ class ResourceController extends Controller
     public function destroy(Resource $resource)
     {      
         $resource->delete();
-        return redirect()->route('admin.resources.index')->with('success', "Ресурс удален!");
+        return redirect()->route('admin.resources.index')
+                         ->with('success', "Ресурс удален!");
     }
 }

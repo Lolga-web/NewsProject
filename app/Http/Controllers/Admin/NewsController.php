@@ -25,7 +25,7 @@ class NewsController extends Controller
             ->with('news', $news);
     }
 
-    public function store(NewsRequest $request, News $news, Category $category) 
+    public function store(NewsRequest $request, News $news) 
     {
         $request->validated();
 
@@ -38,9 +38,11 @@ class NewsController extends Controller
         $result = $news->fill($request->all())->save();
 
         if ($result){
-            return redirect()->route('news.show', $news->id)->with('success', 'Новость добавлена!');
+            return redirect()->route('news.show', $news->id)
+                             ->with('success', 'Новость добавлена!');
         } else {
-            return redirect()->route('admin.news.create')->with('error', 'Ошибка добавления!');
+            return redirect()->route('admin.news.create')
+                             ->with('error', 'Ошибка добавления!');
         }
     }
 
@@ -64,11 +66,13 @@ class NewsController extends Controller
         $news->image = $url;
         $news->isPrivate = $request->has('isPrivate');
         $news->fill($request->all())->save();
-        return redirect()->route('news.show', $news->id)->with('success', 'Новость изменена!');
+        return redirect()->route('news.show', $news->id)
+                         ->with('success', 'Новость изменена!');
     }
 
     public function destroy(News $news) {
         $news->delete();
-        return redirect()->route('admin.index')->with('success', "Новость удалена!");
+        return redirect()->route('admin.index')
+                         ->with('success', "Новость удалена!");
     }
 }

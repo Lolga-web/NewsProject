@@ -24,11 +24,13 @@ class CategoryController extends Controller
 
         $arr = $request->all();
         if(Category::where('title', $arr['title'])->first()){
-            return redirect()->route('admin.categories.index')->with('error', "Категория ".$arr['title']." уже существует.");
+            return redirect()->route('admin.categories.index')
+                             ->with('error', "Категория ".$arr['title']." уже существует.");
         }        
         $category->slug = Str::slug($arr['title'], '-');
         $category->fill($arr)->save();
-        return redirect()->route('admin.categories.index')->with('success', "Категория добавлена!");
+        return redirect()->route('admin.categories.index')
+                         ->with('success', "Категория добавлена!");
     }
 
     public function edit(Category $category) 
@@ -45,15 +47,18 @@ class CategoryController extends Controller
         $arr = $request->all();
         $category->slug = Str::slug($arr['title'], '-');
         $category->fill($arr)->save();
-        return redirect()->route('admin.categories.index')->with('success', "Категория изменена!");
+        return redirect()->route('admin.categories.index')
+                         ->with('success', "Категория изменена!");
     }
 
     public function destroy(Category $category) 
     {
         if(News::where('category_id', $category->id)->first()){
-            return redirect()->route('admin.categories.index')->with('error', "Удаление невозможно! В категории $category->title есть новости.");
+            return redirect()->route('admin.categories.index')
+                             ->with('error', "Удаление невозможно! В категории $category->title есть новости.");
         }        
         $category->delete();
-        return redirect()->route('admin.categories.index')->with('success', "Категория удалена!");
+        return redirect()->route('admin.categories.index')
+                         ->with('success', "Категория удалена!");
     }
 }

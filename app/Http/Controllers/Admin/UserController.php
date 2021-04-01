@@ -59,7 +59,8 @@ class UserController extends Controller
                     'email' => $request->post('email')
                 ])->save();
             }
-            return redirect()->route('admin.users.index')->with('success', 'Профиль успешно изменен!');
+            return redirect()->route('admin.users.index')
+                             ->with('success', 'Профиль успешно изменен!');
         }
 
         return view('admin.users.index', [
@@ -76,7 +77,8 @@ class UserController extends Controller
                     'is_admin' => $request->is_admin
                 ]);
         }
-        return redirect()->route('admin.users.index')->with('error', 'Нельзя снять админа с себя');
+        return redirect()->route('admin.users.index')
+                         ->with('error', 'Нельзя снять админа с себя');
     }
 
     /**
@@ -88,7 +90,8 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index')->with('success', "Пользователь удален!");
+        return redirect()->route('admin.users.index')
+                         ->with('success', "Пользователь удален!");
     }
 
     protected function validateRules($id)

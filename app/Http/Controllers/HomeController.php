@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Swap\Laravel\Facades;
 use App\Models\News;
 use App\Models\Category;
 use App\Services\CurrencyExchangeRate as Rate;

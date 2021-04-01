@@ -24,11 +24,10 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 @if (Auth::user()->is_admin)
                     <a class="dropdown-item" href="{{ route('admin.news.create') }}">Добавить новость</a>
+                    <a class="dropdown-item" href="{{ route('admin.resources.index') }}">Загрузить новости</a>
                     <a class="dropdown-item" href="{{ route('admin.index') }}">Редактировать новости</a>
                     <a class="dropdown-item" href="{{ route('admin.categories.index') }}">Редактировать категории</a>
                     <a class="dropdown-item" href="{{ route('admin.users.index') }}">Редактировать пользователей</a>
-                    <a class="dropdown-item" href="{{ route('admin.resources.index') }}">Парсить новости</a>
-                    <!-- <a class="dropdown-item" href="{{ route('admin.download') }}">Скачать данные</a> -->
                 @endif
                 <a class="dropdown-item" href="{{ route('user.updateProfile') }}">Профиль</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"

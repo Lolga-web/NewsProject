@@ -26,7 +26,7 @@ use Monolog\Processor\HostnameProcessor;
 |
 */
 
-// Route::view('/', 'index')->name('home');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('index', [HomeController::class, 'index']);
 
@@ -64,8 +64,6 @@ Route::name('admin.')
 
         Route::resource('/resources', ResourceController::class)->only(['index', 'store', 'destroy']);
         Route::get('/parser/parse', [ParserController::class, 'parse'])->name('parse');
-
-        Route::get('/download', [IndexController::class, 'download'])->name('download');
     });
 
 Route::get('/auth/{soc}', [LoginController::class, 'socLogin'])->name('soclogin');
@@ -74,8 +72,6 @@ Route::get('/auth/{soc}/response', [LoginController::class, 'socResponse']);
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth', 'is_admin']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-
-Route::view('/about', 'about')->name('about');
 
 Auth::routes();
 
