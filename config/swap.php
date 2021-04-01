@@ -80,37 +80,37 @@ return [
     |
     */
     'services' => [
-        // 'fixer' => ['access_key' => 'YOUR_KEY'],
-        // 'currency_layer' => ['access_key' => 'secret', 'enterprise' => false],
-        // 'coin_layer' => ['access_key' => 'secret', 'paid' => false],
-        // 'european_central_bank' => true,
+        'fixer' => ['access_key' => 'YOUR_KEY'],
+        'currency_layer' => ['access_key' => 'secret', 'enterprise' => false],
+        'coin_layer' => ['access_key' => 'secret', 'paid' => false],
+        'european_central_bank' => true,
         'exchange_rates_api' => true,
-        // 'national_bank_of_romania' => true,
-        // 'central_bank_of_republic_turkey' => true,
-        // 'central_bank_of_czech_republic' => true,
-        // 'russian_central_bank' => true,
-        // 'bulgarian_national_bank' => true,
-        // 'webservicex' => true,
-        // 'forge' => ['api_key' => 'secret'],
-        // 'cryptonator' => true,
-        // 'currency_data_feed' => ['api_key' => 'secret'],
-        // 'open_exchange_rates' => ['app_id' => 'secret', 'enterprise' => false],
-        // 'xignite' => ['token' => 'token'],
-        // 'xchangeapi' => ['api-key' => 'api-key'],
-        // 'array' => [
-        //     [
-        //         'EUR/USD' => 1.1,
-        //         'EUR/GBP' => 1.5
-        //     ],
-        //     [
-        //         '2017-01-01' => [
-        //             'EUR/USD' => 1.5
-        //         ],
-        //         '2017-01-03' => [
-        //             'EUR/GBP' => 1.3
-        //         ],
-        //     ]
-        // ],
+        'national_bank_of_romania' => true,
+        'central_bank_of_republic_turkey' => true,
+        'central_bank_of_czech_republic' => true,
+        'russian_central_bank' => true,
+        'bulgarian_national_bank' => true,
+        'webservicex' => true,
+        'forge' => ['api_key' => 'secret'],
+        'cryptonator' => true,
+        'currency_data_feed' => ['api_key' => 'secret'],
+        'open_exchange_rates' => ['app_id' => 'secret', 'enterprise' => false],
+        'xignite' => ['token' => 'token'],
+        'xchangeapi' => ['api-key' => 'api-key'],
+        'array' => [
+            [
+                'EUR/USD' => 1.1,
+                'EUR/GBP' => 1.5
+            ],
+            [
+                '2017-01-01' => [
+                    'EUR/USD' => 1.5
+                ],
+                '2017-01-03' => [
+                    'EUR/GBP' => 1.3
+                ],
+            ]
+        ],
     ],
 
     /*
