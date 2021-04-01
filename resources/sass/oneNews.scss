@@ -1,0 +1,22 @@
+
+.one_news{
+    margin-bottom: 40px;
+    &_container{
+        display: flex;
+    }
+    &_img{
+        width: 100%;
+        height: 400px;
+        margin-bottom: 20px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &_text{
+        padding-top: 20px;
+        font-size: 16px;
+        font-family: PT Sans Caption, Helvetica Neue, Helvetica, Arial, sans-serif;
+        line-height: 25px;
+        border-top: 1px solid #e5e5e5;
+    }
+}

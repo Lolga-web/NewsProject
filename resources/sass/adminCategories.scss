@@ -1,0 +1,30 @@
+
+.add_category_form{
+    width: 500px;
+}
+.admin_category{
+    &_container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    &_item{
+        width: 45%;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e1e0d7;
+        &_title{
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+    &_btns {
+        width: 220px;
+    }
+}

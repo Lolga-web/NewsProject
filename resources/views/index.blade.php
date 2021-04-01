@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="main_page_container">
-        <div class="main_top">
+        <div class="main_page_top">
             <div class="main_section">
 
                 <div class="last_news_list">

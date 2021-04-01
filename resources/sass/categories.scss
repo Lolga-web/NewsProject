@@ -1,0 +1,168 @@
+
+.categories{
+    &_list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &_item{
+        margin-right: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        background-color: #e1e0d7;
+        border-color: #e1e0d7;
+        &:hover{
+            background-color: #d1d0ca;
+            border-color: #d1d0ca;
+        }
+        &:last-child{
+            margin-right: auto;
+            margin-left: 0;
+        }
+        &_title{
+            margin: 0;
+            font-size: 16px;
+            color: #000;
+            &::first-letter{
+                text-transform: uppercase;
+            }
+        }
+        &_link:hover{
+            text-decoration: none;
+        }
+    }
+    &_news{
+        &_container{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            &::after{
+                content: '';
+                width: 30%;
+            }
+        }
+        &_category{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            min-width: 320px;
+        }   
+    }
+}
+
+.category{
+    &_news{
+        &_link:hover{
+            text-decoration: none;
+        }
+        &_bottom_link{
+            text-align: right;
+            padding: 10px;
+            color: #151515;
+            font-size: 12px;
+            font-family: PT Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+            &:hover{
+                text-decoration: none;
+                color: #c33;
+            }
+        }
+        &_title{
+            font-size: 14px;
+            border-top: 3px solid #151515;
+            border-bottom: 1px solid #e5e5e5;
+            text-transform: uppercase;
+            font-family: PT Sans Caption,Helvetica Neue,Helvetica,Arial,sans-serif;
+            font-weight: 700;
+            padding: 11px 0;
+            color: #444;
+        }
+        &_list{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        &_item{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            &_link:hover{
+                text-decoration: none;
+                & .category_news_item_title{
+                    color: #c33;
+                }
+            }
+            &_container{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            &_title{
+                margin: 0;
+                color: #151515;
+                font-size: 14px;
+                font-family: "PT Serif",Georgia,Times New Roman,Times,serif;
+            }
+            &_date{
+                color: #959595;
+                font-size: 12px;
+                font-weight: 400;
+                font-family: PT Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+            }
+            &_img{
+                width: 100px;
+                height: 60px;
+                margin-right: 10px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    }
+}
+
+.news_in_category{
+    border-top: 3px solid #151515;
+    &_link:hover{
+        text-decoration: none;
+    }
+    &_title{
+        margin-bottom: 20px;
+        padding: 11px 0;
+        color: #151515;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: PT Sans Caption,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-weight: 700;
+        letter-spacing: .1em;
+        line-height: 1;
+        border-bottom: 1px solid #d5d5d5;
+    }
+    &_list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &_btn{
+        width: 300px;
+        display: block;
+        text-align: center;
+        padding: 5px 16px;
+        margin: 0 auto 20px auto;
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: PT Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        color: #151515;
+        transition: color .2s;
+        text-decoration: none;
+        &:hover{
+            color: #c33;
+            text-decoration: none;
+        }
+    }
+}

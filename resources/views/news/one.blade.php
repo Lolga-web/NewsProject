@@ -38,10 +38,11 @@
                     @else
                         <p>Нет такой категории</p> 
                     @endif  
-                    <a class="news_in_category_btn" href="{{ route('news.category.show', $news->category->slug) }}">
-                        Больше новостей
-                    </a>
+                    
                 </div> 
+                <a class="news_in_category_btn" href="{{ route('news.category.show', $news->category->slug) }}">
+                    Больше новостей
+                </a>
             </div>
 
             @include('templates.newsByCategories', ['news' => $allNewsByCategories])

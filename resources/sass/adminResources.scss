@@ -1,0 +1,28 @@
+.resource{
+    &_container{
+        display: flex;
+        margin: 20px 0;
+    }
+    &_item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: calc(0.375rem + 1px);
+        padding-bottom: calc(0.375rem + 1px);
+    }
+    &_list{
+        padding-right: 40px;
+        border-right: 1px solid #e1e0d7;
+    }
+    &_add{
+        &_form{
+            margin: 0;
+        }
+        &_title{
+            margin-bottom: 20px;
+        }
+        &_url{
+            margin-bottom: 20px;
+        }
+    }
+}

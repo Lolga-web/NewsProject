@@ -1,0 +1,28 @@
+.user_item {
+    display: flex;
+    margin-bottom: 30px;
+    &_is_admin{
+        display: flex;
+        align-items: center;
+    }
+    &_title{
+        margin: 0;
+        font-size: 1.35rem;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.btn_load{
+    display: none;
+    width: 200px;
+}
+.btn_active{
+    width: 200px;
+}
+.hidden {
+    display: none;
+}
+.active {
+    display: inline-block;
+}

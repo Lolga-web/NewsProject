@@ -1,0 +1,15 @@
+
+.currency_exchange_rate{
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    & p{
+        font-size: 14px;
+        font-weight: 700;
+        color: #151515;
+        text-transform: uppercase;
+        & span{
+            color: #c93037;
+        }
+    }
+}
