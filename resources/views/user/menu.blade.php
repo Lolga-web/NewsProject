@@ -29,7 +29,7 @@
                     <a class="dropdown-item" href="{{ route('admin.categories.index') }}">Редактировать категории</a>
                     <a class="dropdown-item" href="{{ route('admin.users.index') }}">Редактировать пользователей</a>
                 @endif
-                <a class="dropdown-item" href="{{ route('user.updateProfile') }}">Профиль</a>
+                <a class="dropdown-item" href="{{ route('user.index') }}">Профиль</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">

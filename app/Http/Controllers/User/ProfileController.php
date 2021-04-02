@@ -6,16 +6,26 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\ProfileRequest;
 
 class ProfileController extends Controller
 {
-    public function update(Request $request) {
+    public function index()
+    {
+        $user = Auth::user();
+        return view('user.profile', [
+            'user' => $user
+        ]);
+    }
+
+    public function update(ProfileRequest $request) 
+    {
         $errors = [];
         $user = Auth::user();
 
         if ($request->isMethod('post')) {
 
-            $this->validate($request, $this->validateRules(), [], $this->attributeNames());
+            $request->validated();
 
             if (Hash::check($request->post('password'), $user->password)) {
                 $user->fill([
@@ -39,20 +49,4 @@ class ProfileController extends Controller
         ]);
     }
 
-    protected function validateRules()
-    {
-        return [
-            'name' => 'required|string|max:15',
-            'email' => 'required|email|unique:users,email,' . Auth::id(),
-            'password' => 'required',
-            'newPassword' => 'required|string|min:3'
-        ];
-    }
-
-    protected function attributeNames()
-    {
-        return [
-            'newPassword' => 'Новый пароль'
-        ];
-    }
 }

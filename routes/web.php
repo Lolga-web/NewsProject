@@ -46,7 +46,8 @@ Route::name('user.')
     ->prefix('user')
     ->middleware('auth')
     ->group(function () {
-        Route::match(['get', 'post'], '/profile', [ProfileController::class, 'update'])->name('updateProfile');
+        Route::get('/profile', [ProfileController::class, 'index'])->name('index');
+        Route::post('/profile', [ProfileController::class, 'update'])->name('updateProfile');
     });
 
 Route::name('admin.')
