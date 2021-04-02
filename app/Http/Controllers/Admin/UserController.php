@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,10 +43,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserRequest $request, User $user)
     {
         if ($request->isMethod('put')) {
-            $this->validate($request, $this->validateRules($user->id), [], $this->attributeNames());
+
+            $request->validated();
 
             if (Hash::check($request->post('newPassword'), $user->password)) {
                 $user->fill([
@@ -94,19 +96,4 @@ class UserController extends Controller
                          ->with('success', "Пользователь удален!");
     }
 
-    protected function validateRules($id)
-    {
-        return [
-            'name' => 'required|string|max:35',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'newPassword' => 'nullable|string|min:3'
-        ];
-    }
-
-    protected function attributeNames()
-    {
-        return [
-            'newPassword' => 'Новый пароль'
-        ];
-    }
 }
